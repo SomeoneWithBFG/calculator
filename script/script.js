@@ -6,7 +6,7 @@ const startButton = document.querySelector('.start-button'),
       total = document.querySelector('.total'),
       fastRange = document.querySelector('.fast-range');
 
-function showElem(elem){
+function showElem(elem){ 
     elem.style.display = 'block';
 }
 function hideElem(elem){
