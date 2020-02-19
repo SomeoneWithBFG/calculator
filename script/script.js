@@ -22,7 +22,7 @@ function handlerCallbackForm(event){
 startButton.addEventListener('click', () => {
     showElem(mainForm);
     hideElem(firstScreen);
-})
+}) 
 endButton.addEventListener('click', () => {
     for (const elem of formCalculate.elements) {
         if (elem.tagName === 'FIELDSET')
