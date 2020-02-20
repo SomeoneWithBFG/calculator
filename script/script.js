@@ -62,9 +62,12 @@ function priceCalculation(elem) {
         for(const item of formCalculate.elements) {
            if (item.type === 'checkbox') {
                item.checked = false;
-               document.querySelector('.checkbox-label.'+item+'_value').textContent = "Нет";
            }
-       } 
+       }
+       document.querySelector('.checkbox-label.desktopTemplates_value').textContent = "Нет";
+       document.querySelector('.checkbox-label.adapt_value').textContent = "Нет";
+       document.querySelector('.checkbox-label.mobileTemplates_value').textContent = "Нет";
+       document.querySelector('.checkbox-label.editable_value').textContent = "Нет";
        hideElem(fastRange);
     }
     for(const item of formCalculate.elements) {
@@ -127,28 +130,28 @@ endButton.addEventListener('click',function(){
     showElem(total);
 });
 
-desktopTemplates.addEventListener('click', () => {
+desktopTemplates.addEventListener('change', () => {
     if (desktopTemplates.checked)
         document.querySelector('.checkbox-label.desktopTemplates_value').textContent = "Да";
     else
         document.querySelector('.checkbox-label.desktopTemplates_value').textContent = "Нет";
 })
 
-adapt.addEventListener('click', () => {
+adapt.addEventListener('change', () => {
     if (adapt.checked)
         document.querySelector('.checkbox-label.adapt_value').textContent = "Да";
     else
         document.querySelector('.checkbox-label.adapt_value').textContent = "Нет";
 })
 
-mobileTemplates.addEventListener('click', () => {
+mobileTemplates.addEventListener('change', () => {
     if (mobileTemplates.checked)
         document.querySelector('.checkbox-label.mobileTemplates_value').textContent = "Да";
     else
         document.querySelector('.checkbox-label.mobileTemplates_value').textContent = "Нет";
 })
 
-editable.addEventListener('click', () => {
+editable.addEventListener('change', () => {
     if (editable.checked)
         document.querySelector('.checkbox-label.editable_value').textContent = "Да";
     else
