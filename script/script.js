@@ -1,17 +1,17 @@
 const DAY_STRING = ['день','дня','дней'];
 
 const DATA = {
-    whichSite: ['landing','multiPage','onlineStore'],
-    price: [4000,8000,26000],
-    desktopTemplates: [50,40,30],
-    adapt: 20,
-    mobileTemplates: 15,
-    editable: 10,
-    metrikaYandex: [500,1000,2000],
-    analyticsGoogle: [850,1350,3000],
-    sendOrder: 500,
-    deadlineDay: [[2,7],[3,10],[7,14]],
-    deadlinePercent: [20,17,15],
+      whichSite: ['landing','multiPage','onlineStore'],
+      price: [4000,8000,26000],
+      desktopTemplates: [50,40,30],
+      adapt: 20,
+      mobileTemplates: 15,
+      editable: 10,
+      metrikaYandex: [500,1000,2000],
+      analyticsGoogle: [850,1350,3000],
+      sendOrder: 500,
+      deadlineDay: [[2,7],[3,10],[7,14]],
+      deadlinePercent: [20,17,15],
 
 };
 
@@ -57,16 +57,16 @@ function priceCalculation(elem) {
         site = '',
         maxDeadlineDay = DATA.deadlineDay[index][1],
         minDeadlineDay = DATA.deadlineDay[index][0];
-
+        
     if(elem.name === 'whichSite') {
         for(const item of formCalculate.elements) {
            if (item.type === 'checkbox') {
                item.checked = false;
+               document.querySelector('.checkbox-label.'+item+'_value').textContent = "Нет";
            }
        } 
        hideElem(fastRange);
     }
-
     for(const item of formCalculate.elements) {
         if(item.name === 'whichSite' && item.checked) {
             index = DATA.whichSite.indexOf(item.value);
@@ -77,7 +77,6 @@ function priceCalculation(elem) {
             options.push(item.value);
         }
     }
-
     options.forEach(function(key) {
         if(typeof(DATA[key]) === 'number') {
             if(key === 'sendOrder') {
@@ -93,7 +92,6 @@ function priceCalculation(elem) {
             }
         }
     });
-
     result += DATA.price[index];
     renderTextContent(result, site, maxDeadlineDay, minDeadlineDay)
 }
