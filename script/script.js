@@ -151,7 +151,7 @@ mobileTemplates.addEventListener('click', () => {
 })
 
 editable.addEventListener('click', () => {
-    if (mobileTemplates.checked)
+    if (editable.checked)
         document.querySelector('.checkbox-label.editable_value').textContent = "Да";
     else
         document.querySelector('.checkbox-label.editable_value').textContent = "Нет";
