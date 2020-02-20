@@ -68,6 +68,7 @@ function priceCalculation(elem) {
        document.querySelector('.checkbox-label.adapt_value').textContent = "Нет";
        document.querySelector('.checkbox-label.mobileTemplates_value').textContent = "Нет";
        document.querySelector('.checkbox-label.editable_value').textContent = "Нет";
+       mobileTemplates.disabled = true;
        hideElem(fastRange);
     }
     for(const item of formCalculate.elements) {
