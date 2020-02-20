@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -82,7 +83,7 @@
 				<fieldset>
 					<legend>Адаптировать сайт под смартфоны и&nbsp;планшеты?</legend>
 					<label class="switcher">
-						<input type="checkbox" class="calc-handler" name="option" id="adapt" value="adapt">
+						<input type="checkbox" class="calc-handler" name="option" id="adapt" value="adapt" onclick="agreeForm(this.form)">
 						<span class="switcher__indicator"></span>
 						<span class="checkbox-label adapt_value">Нет</span>
 					</label>
@@ -92,7 +93,7 @@
 				<fieldset>
 					<legend>Нужно ли разрабатывать дизайн сайта под мобильные устройства?</legend>
 					<label class="switcher">
-						<input type="checkbox" class="calc-handler" name="option" id="mobileTemplates" value="mobileTemplates">
+						<input type="checkbox" class="calc-handler" name="option" id="mobileTemplates" value="mobileTemplates" disabled>
 						<span class="switcher__indicator"></span>
 						<span class="checkbox-label mobileTemplates_value">Нет</span>
 					</label>
@@ -197,6 +198,10 @@
 		</section>
 	</main>
 </body>
-
-
+<script>
+	function agreeForm(f) {
+		if (f.adapt.checked) f.mobileTemplates.disabled = 0
+		else f.mobileTemplates.disabled = 1
+	}
+   </script>
 </html>
